@@ -1,0 +1,14 @@
+# all
+/**/.idea/
+/**/bin/
+/**/.fleet/
+/**/.cache/
+
+# docs
+# /**/docs/**/
+
+# CMake
+/**/cmake-build-*/
+/**/build/
+/**/CMakeLists.txt.user
+
