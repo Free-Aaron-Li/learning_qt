@@ -5,15 +5,19 @@
 //  <communicate_aaron@outlook.com>.
 #include "../include/exercise.hpp"
 
-int add(const int a, const int b) { return a + b; }
-int sub(const int a, const int b) { return a - b; }
-int mul(const int a, const int b) { return a * b; }
-double divi(const int a, const int b) {
+auto add = [](const int a, const int b) -> int { return a + b; };
+auto sub = [](const int a, const int b) -> int { return a - b; };
+auto mul = [](const int a, const int b) -> int { return a * b; };
+auto divi = [](const int a, const int b) -> int {
     if (b == 0) {
-        std::cerr << "除数不能为0" << std::endl;
-        return -1;
+        throw std::runtime_error("除数不能为0");
     }
     return a / b;
+};
+
+int computer(const int a, const int b, int (*p)(const int a, const int b)) {
+    std::cout << "开始计算" << std::endl;
+    return p(a, b);
 }
 
 void calculator() {
@@ -30,7 +34,8 @@ void calculator() {
         std::cin >> cal;
         switch (cal) {
             case '+':
-                std::cout << add(a, b) << std::endl;
+                /// 回调
+                std::cout << computer(a, b, [](const int a, const int b) -> int { return a + b; }) << std::endl;
                 break;
             case '-':
                 std::cout << sub(a, b) << std::endl;
