@@ -5,8 +5,11 @@ project(second_namespace LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(second_namespace main.cpp
-               cir.hpp
+add_executable(second_namespace
+               src/main.cpp
+               include/cir.hpp
+               src/exercise.cpp
+               include/exercise.hpp
 )
 
 include(GNUInstallDirs)
