@@ -52,4 +52,39 @@ public:
     /// 该函数为常量成员函数，其核心作用是限制函数对对象状态的修改权限
     void printMessage() const;
 };
+
+class Person {
+public:
+    std::string _name;
+    int _age;
+    bool operator==(const Person &person_temp) const;
+};
+
+class Point {
+public:
+    int _x;
+    int _y;
+    /// const 表明该重载函数不会修改调用它的 Point 对象。
+    /// 它只是读取对象的 x 和 y 成员，并返回一个新的 Point 对象。
+    /// 确保某些函数不会意外改变对象的状态，也同时使得这个函数可以在常量对象上被调用。
+    Point operator+(const Point &point_temp) const;
+};
+
+class Car {
+public:
+    std::pmr::string _brand;
+    int _year{ 0 };
+    Car() { std::cout << "构造函数被调用" << std::endl; }
+    Car(const std::string &brand, const int &year) : _brand(brand), _year(year) {
+        std::cout << "带参数的构造函数被调用" << std::endl;
+        std::cout << this << std::endl; /// 打印 this 指针的地址
+    }
+
+    void display() const { std::cout << "品牌：" << _brand << ", 年份：" << _year << std::endl; }
+
+    Car &setYear(const int &year) {
+        this->_year = year;
+        return *this; /// 返回调用对象的指针
+    }
+};
 #endif // EXERCISE_HPP

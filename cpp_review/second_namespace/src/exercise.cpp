@@ -80,3 +80,12 @@ void BankAccount::printMessage() const {
     std::cout << "姓名：" << _name << "，地址：" << _address << "，年龄：" << _age << "，余额：" << _balance
               << std::endl;
 }
+bool Person::operator==(const Person &person_temp) const {
+    return this->_age == person_temp._age && this->_name == person_temp._name;
+}
+Point Point::operator+(const Point &point_temp) const {
+    Point point_temp_new{};
+    point_temp_new._x = this->_x + point_temp._x;
+    point_temp_new._y = this->_y + point_temp._y;
+    return point_temp_new;
+}
