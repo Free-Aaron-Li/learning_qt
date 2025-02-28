@@ -23,7 +23,8 @@ int getMax(const int a, const int b, bool (*pcompare)(int a, int b)) {
     return b;
 }
 
-int main() {
+/// 测试函数
+void test() {
     constexpr double my_radius = 5.0;
     int input_value = 0;
     std::cout << "Hello World!" << std::endl; /// 使用标准库cout输出
@@ -65,9 +66,32 @@ int main() {
 
     printf("my_radius = %f, area = %f, circumference = %f\n", my_radius, cir::get_cir_circumference(my_radius),
            cir::get_cir_area(my_radius)); /// 包含头文件cir.hpp中的命名空间cir
+}
 
+/// 引用
+double values[] = { 1, 2, 3, 4, 5 };
+double &setValue(const int &i) {
+    double &ref = values[i];
+    return ref;
+}
+
+int main() {
+    // test();
     /// 练习1：加减乘除
-    calculator();
+    // calculator();
+
+    /// 练习2：银行
+    // BankAccount user1;
+    // user1.registerMessage("Aaron", "China", 18, 20000);
+    // user1.printMessage();
+    // user1.deposit(10000);
+    // user1.withdraw(5000);
+    // user1.printMessage();
+    // user1.withdraw(120000);
+
+    /// 练习3：引用
+    setValue(3) = 120.1; /// 函数被当作左值
+    cout << values[3] << endl;
 
     return 0;
 }

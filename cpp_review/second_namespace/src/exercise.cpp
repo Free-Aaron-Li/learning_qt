@@ -54,3 +54,29 @@ void calculator() {
         std::cin >> go_to_continue;
     }
 }
+void BankAccount::registerMessage(const std::string &name, const std::string &address, const int &age,
+                                  const double &balance) {
+    this->_name = name;
+    this->_address = address;
+    this->_age = age;
+    this->_balance = balance;
+}
+void BankAccount::withdraw(const double &amount) {
+    if (amount > _balance) {
+        throw std::invalid_argument("取款金额大于余额！");
+    }
+    if (amount <= 0) {
+        throw std::invalid_argument("取款金额必须为正数!");
+    }
+    _balance -= amount;
+}
+void BankAccount::deposit(const double &amount) {
+    if (amount <= 0) {
+        throw std::invalid_argument("存款金额必须为正数!");
+    }
+    _balance += amount;
+}
+void BankAccount::printMessage() const {
+    std::cout << "姓名：" << _name << "，地址：" << _address << "，年龄：" << _age << "，余额：" << _balance
+              << std::endl;
+}
