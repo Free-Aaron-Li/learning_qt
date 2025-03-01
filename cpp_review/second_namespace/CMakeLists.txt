@@ -10,6 +10,10 @@ add_executable(second_namespace
                include/cir.hpp
                src/exercise.cpp
                include/exercise.hpp
+               include/animal.hpp
+               src/animal.cpp
+               src/lion.cpp
+               include/lion.hpp
 )
 
 include(GNUInstallDirs)

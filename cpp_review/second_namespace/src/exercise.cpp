@@ -89,3 +89,7 @@ Point Point::operator+(const Point &point_temp) const {
     point_temp_new._y = this->_y + point_temp._y;
     return point_temp_new;
 }
+int MyClass::_static_member = 0;
+void MyClass::printInfo() const { std::cout << "数据：" << _datas << std::endl; }
+void Vehicle::run() { std::cout << "车跑起来了" << std::endl; }
+void Vehicle::stop() { std::cout << "车停了" << std::endl; }

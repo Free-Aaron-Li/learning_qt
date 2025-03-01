@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <string>
+#include <utility>
 
 /**
  * @brief 1. 加减乘除运算
@@ -87,4 +88,41 @@ public:
         return *this; /// 返回调用对象的指针
     }
 };
+
+class MyClass {
+public:
+    /// 对象数量
+    static int _static_member;
+    int _datas{ 0 };
+    MyClass() { _static_member++; }
+    ~MyClass() { _static_member--; }
+    void printInfo() const;
+    static int getStaticMember() { return _static_member; }
+};
+
+class Vehicle { /* 交通工具：车，抽象的概念 */
+    std::string _type;
+    std::string _country;
+    std::string _color;
+    double _price{ 0 };
+    int _num_of_wheel{ 4 };
+    Vehicle() = default;
+    Vehicle(std::string type, std::string country, std::string color, const double &price, const int num_of_wheel) :
+        _type(std::move(type)), _country(std::move(country)), _color(std::move(color)), _price(price),
+        _num_of_wheel(num_of_wheel) {}
+
+    void run();
+    void stop();
+};
+
+/// 派生类，子类
+class Roadster : public Vehicle { /* 跑车，但比父类感觉上范围缩小了 */
+    Roadster();
+    /// 派生类初始化基类
+    Roadster(std::string type, std::string country, std::string color, const double &price, const int num_of_wheel) :
+        Vehicle(std::move(type), std::move(country), std::move(color), price, num_of_wheel) {}
+    void openCarDoors();
+};
+
+
 #endif // EXERCISE_HPP

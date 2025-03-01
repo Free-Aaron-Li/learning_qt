@@ -8,8 +8,10 @@
 #include <cstdio>
 #include <iostream>
 
+#include "../include/animal.hpp"
 #include "../include/cir.hpp"
 #include "../include/exercise.hpp"
+#include "../include/lion.hpp"
 
 using namespace std; /// 将标准库（std）中的所有名称引入当前作用域
 
@@ -120,26 +122,55 @@ int main() {
     // std::cout << "p3 x is: " << p3._x << ", p3 y is: " << p3._y << std::endl;
 
     /// 练习5：构造函数
-    Car car1;
-    car1.display();
-    Car *p_car1 = new Car;
-    Car *p_car2 = new Car(); /// 都会调用构造函数
-    Car *p_car3 = new Car("BMW", 2020);
-    // p_car3->display();
+    // Car car1;
+    // car1.display();
+    // Car *p_car1 = new Car;
+    // Car *p_car2 = new Car(); /// 都会调用构造函数
+    // Car *p_car3 = new Car("BMW", 2020);
+    // // p_car3->display();
+    //
+    // std::cout << "\nthis 指针特点：" << std::endl;
+    // Car car2("奔驰", 2020);
+    // std::cout << &car2 << std::endl; /// this 指向当前对象
+    // Car car3("宝马", 2020);
+    // std::cout << &car3 << std::endl;
+    //
+    // /// 链式调用
+    // car3.setYear(2024).display();
+    // delete p_car1;
+    // delete p_car2;
+    // delete p_car3;
+    // delete &car1;
+    // delete &car2;
+    // delete &car3;
 
-    std::cout << "\nthis 指针特点：" << std::endl;
-    Car car2("奔驰", 2020);
-    std::cout << &car2 << std::endl; /// this 指向当前对象
-    Car car3("宝马", 2020);
-    std::cout << &car3 << std::endl;
+    /// 练习6：静态成员变量
+    // 通过类名调用
+    // std::cout << MyClass::_static_member << std::endl;
+    // // 通过静态函数调用
+    // std::cout << MyClass::getStaticMember() << std::endl;
+    //
+    // // 查看创建的对象数目
+    // const MyClass my_class1;
+    // const MyClass my_class2;
+    // std::cout << MyClass::_static_member << std::endl; /* 2 */
+    // {
+    //     const MyClass my_class3;
+    //     std::cout << MyClass::_static_member << std::endl; /* 3 */
+    // }
+    // const MyClass *my_class4 = new MyClass;
+    // std::cout << MyClass::_static_member << std::endl; /* 3 */
+    // delete my_class4;
+    // std::cout << MyClass::_static_member << std::endl; /* 2 */
 
-    /// 链式调用
-    car3.setYear(2024).display();
-    delete p_car1;
-    delete p_car2;
-    delete p_car3;
-    delete &car1;
-    delete &car2;
-    delete &car3;
+    /// 联系7：继承
+    const ANIMAL animal1;
+    animal1.eat();
+    animal1.sound();
+
+    Lion lion1;
+    lion1.sound();
+    lion1.hunting();
+
     return 0;
 }
