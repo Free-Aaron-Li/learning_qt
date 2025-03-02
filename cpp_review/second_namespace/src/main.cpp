@@ -163,14 +163,38 @@ int main() {
     // delete my_class4;
     // std::cout << MyClass::_static_member << std::endl; /* 2 */
 
-    /// 联系7：继承
-    const ANIMAL animal1;
-    animal1.eat();
-    animal1.sound();
+    /// 练习7：继承
+    // const ANIMAL animal1;
+    // animal1.eat();
+    // animal1.sound();
+    //
+    // Lion lion1;
+    // lion1.sound();
+    // lion1.hunting();
 
-    Lion lion1;
-    lion1.sound();
-    lion1.hunting();
+    /// 练习8：多态
+    RemoteControl *p_remote_control1 = new TVRemoteControl;
+    RemoteControl *p_remote_control1_1 = new LightRemoteControl;
+    p_remote_control1->openUtils();
+
+    auto *p_remote_control2 = new LightRemoteControl;
+    p_remote_control2->openUtils();
+
+    auto *p_remote_control3 = new StereoRemoteControl;
+    p_remote_control3->openUtils();
+
+    /// 由于基类析构函数是 protected，实际上无法通过基类指针销毁。
+    /// delete p_remote_control1;
+    /// 解决方法1：采用派生类指针显式删除 \n
+    /// 使用 dynamic_cast 而非 static_cast 的原因在于类型安全性和运行时检查。\n
+    /// 1. static_cast 在编译期间完成类型转换，<b>不会检查对象的实际类型</b>。\n
+    /// 2. dynamic_cast 在运行时完成类型转换，<b>会检查对象的实际类型</b>，确保转换合法。\n
+    /// a. 若类型不匹配，返回 nullptr（对指针类型）或抛出异常（对引用类型）。\n
+    delete dynamic_cast<TVRemoteControl *>(p_remote_control1);
+    /// 解决方法2：在基类中提供公共销毁接口
+    p_remote_control1_1->destroy();
+    delete p_remote_control2;
+    delete p_remote_control3;
 
     return 0;
 }

@@ -91,5 +91,12 @@ Point Point::operator+(const Point &point_temp) const {
 }
 int MyClass::_static_member = 0;
 void MyClass::printInfo() const { std::cout << "数据：" << _datas << std::endl; }
-void Vehicle::run() { std::cout << "车跑起来了" << std::endl; }
-void Vehicle::stop() { std::cout << "车停了" << std::endl; }
+void Vehicle::run() const { std::cout << "车跑起来了" << std::endl; }
+void Vehicle::stop() const { std::cout << "车停了" << std::endl; }
+void RemoteControl::openUtils() { std::cout << "打开遥控器" << std::endl; }
+TVRemoteControl::~TVRemoteControl() { std::cout << "关闭电视📺" << std::endl; }
+void TVRemoteControl::openUtils() { std::cout << "打开电视📺" << std::endl; }
+StereoRemoteControl::~StereoRemoteControl() { std::cout << "关闭音响📢" << std::endl; }
+void StereoRemoteControl::openUtils() { std::cout << "打开音响📢" << std::endl; }
+LightRemoteControl::~LightRemoteControl() { std::cout << "关闭灯💡" << std::endl; }
+void LightRemoteControl::openUtils() { std::cout << "打开灯💡" << std::endl; }

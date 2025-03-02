@@ -101,6 +101,7 @@ public:
 };
 
 class Vehicle { /* 交通工具：车，抽象的概念 */
+public:
     std::string _type;
     std::string _country;
     std::string _color;
@@ -111,12 +112,13 @@ class Vehicle { /* 交通工具：车，抽象的概念 */
         _type(std::move(type)), _country(std::move(country)), _color(std::move(color)), _price(price),
         _num_of_wheel(num_of_wheel) {}
 
-    void run();
-    void stop();
+    void run() const;
+    void stop() const;
 };
 
 /// 派生类，子类
 class Roadster : public Vehicle { /* 跑车，但比父类感觉上范围缩小了 */
+public:
     Roadster();
     /// 派生类初始化基类
     Roadster(std::string type, std::string country, std::string color, const double &price, const int num_of_wheel) :
@@ -124,5 +126,48 @@ class Roadster : public Vehicle { /* 跑车，但比父类感觉上范围缩小�
     void openCarDoors();
 };
 
+/// 基类：遥控器
+class RemoteControl {
+    /// 基类析构函数为 protected 的原因有：\n
+    /// 1. 被声明为 protected，意味着无法通过基类指针直接删除对象。\n
+    /// a. 这种设计强制用户只能通过派生类指针操作对象，从而绕过多态删除可能导致的资源泄漏问题。
+    /// 2. 避免虚函数表开销。\n
+    /// a.
+    /// 若基类析构函数非虚，则基类不会生产虚函数表（vtable），从而减少内存占用和运行开销，这在基类无需多态行为时是合理的。
+protected:
+    ~RemoteControl() = default;
+
+public:
+    /// 公共销毁接口
+    virtual void destroy() { delete this; }
+    virtual void openUtils();
+};
+
+/// 派生类：电视遥控器
+class TVRemoteControl final : public RemoteControl {
+public:
+    /// 1. 派生类被标记为 final，表示其不能进一步继承。此时派生类的虚析构函数实际上无多态必要性。但是出于以下考虑：\n
+    /// a. <b>代码规范</b>：遵循“析构函数应为虚函数”的通用建议。\n
+    /// b. <b>防御性编程</b>：防止未来移除 final 限定符后可能引发的资源泄漏风险。\n
+    /// 2. 虚析构的自动传递性 \n
+    /// a. 如果基类析构函数为虚函数，则派生类的析构函数也会自动继承该虚析构函数。\n
+    /// b. 此例中，基类析构非虚，因此派生类必须显式声明为虚析构函数，此为宂于操作。\n
+    virtual ~TVRemoteControl();
+    void openUtils() override;
+};
+
+/// 派生类：音响遥控器
+class StereoRemoteControl final : public RemoteControl {
+public:
+    virtual ~StereoRemoteControl();
+    void openUtils() override;
+};
+
+/// 派生类：灯光遥控器
+class LightRemoteControl final : public RemoteControl {
+public:
+    virtual ~LightRemoteControl();
+    void openUtils() override;
+};
 
 #endif // EXERCISE_HPP
