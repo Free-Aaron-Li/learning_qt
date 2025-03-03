@@ -22,7 +22,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 # 在顶层项目下以“bin/”方式生成可执行文件
 get_filename_component(SECONDARY_DIR "${PROJECT_SOURCE_DIR}/.." ABSOLUTE)
 get_filename_component(SECONDARY_DIR_NAME "${SECONDARY_DIR}" NAME)
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../bin/)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../bin/)
 
 # 禁止输出qDebug()调试信息
 add_definitions(-DQT_NO_DEBUG_OUTPUT)
