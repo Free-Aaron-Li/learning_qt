@@ -28,6 +28,12 @@ public:
     QPushButton *btnQObj;
     QPushButton *btnLambda;
     QPushButton *btnPointer;
+    QPushButton *btnReadFile;
+    QPushButton *btnWriteFile;
+    QPushButton *btnStreamRead;
+    QPushButton *btnStreamWrite;
+    QPushButton *btnQFileDialogOpen;
+    QPushButton *btnSaveFile;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,6 +59,24 @@ public:
         btnPointer = new QPushButton(centralwidget);
         btnPointer->setObjectName("btnPointer");
         btnPointer->setGeometry(QRect(420, 190, 80, 26));
+        btnReadFile = new QPushButton(centralwidget);
+        btnReadFile->setObjectName("btnReadFile");
+        btnReadFile->setGeometry(QRect(30, 260, 80, 20));
+        btnWriteFile = new QPushButton(centralwidget);
+        btnWriteFile->setObjectName("btnWriteFile");
+        btnWriteFile->setGeometry(QRect(150, 260, 80, 20));
+        btnStreamRead = new QPushButton(centralwidget);
+        btnStreamRead->setObjectName("btnStreamRead");
+        btnStreamRead->setGeometry(QRect(280, 260, 80, 20));
+        btnStreamWrite = new QPushButton(centralwidget);
+        btnStreamWrite->setObjectName("btnStreamWrite");
+        btnStreamWrite->setGeometry(QRect(420, 260, 80, 20));
+        btnQFileDialogOpen = new QPushButton(centralwidget);
+        btnQFileDialogOpen->setObjectName("btnQFileDialogOpen");
+        btnQFileDialogOpen->setGeometry(QRect(20, 310, 101, 21));
+        btnSaveFile = new QPushButton(centralwidget);
+        btnSaveFile->setObjectName("btnSaveFile");
+        btnSaveFile->setGeometry(QRect(150, 310, 80, 20));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -76,6 +100,12 @@ public:
         btnQObj->setText(QCoreApplication::translate("MainWindow", "No2 QObj", nullptr));
         btnLambda->setText(QCoreApplication::translate("MainWindow", "No3 Lambda", nullptr));
         btnPointer->setText(QCoreApplication::translate("MainWindow", "No4 Pointer", nullptr));
+        btnReadFile->setText(QCoreApplication::translate("MainWindow", "\350\257\273\345\217\226\346\226\207\344\273\266", nullptr));
+        btnWriteFile->setText(QCoreApplication::translate("MainWindow", "\345\206\231\345\205\245\346\226\207\344\273\266", nullptr));
+        btnStreamRead->setText(QCoreApplication::translate("MainWindow", "Stream \350\257\273\345\217\226", nullptr));
+        btnStreamWrite->setText(QCoreApplication::translate("MainWindow", "Stream \345\206\231\345\205\245", nullptr));
+        btnQFileDialogOpen->setText(QCoreApplication::translate("MainWindow", "\346\211\223\345\274\200\346\226\207\344\273\266\351\200\211\346\213\251\346\241\206", nullptr));
+        btnSaveFile->setText(QCoreApplication::translate("MainWindow", "\344\277\235\345\255\230\346\226\207\344\273\266", nullptr));
     } // retranslateUi
 
 };

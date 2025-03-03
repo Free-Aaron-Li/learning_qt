@@ -79,6 +79,84 @@
      <string>No4 Pointer</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnReadFile">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>读取文件</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnWriteFile">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>写入文件</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnStreamRead">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>260</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stream 读取</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnStreamWrite">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>260</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stream 写入</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnQFileDialogOpen">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>打开文件选择框</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSaveFile">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>310</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>保存文件</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

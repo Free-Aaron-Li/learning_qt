@@ -1,3 +1,9 @@
+//  Copyright (c) 2025. aaron.
+//
+//  This program is under the GPL-3.0 license.
+//  if you have not received it or the program has several bugs, please let me know:
+//  <communicate_aaron@outlook.com>.
+
 /********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
@@ -48,7 +54,7 @@ public:
             Widget->setObjectName("Widget");
         Widget->resize(799, 599);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/resource/icon/note.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon.addFile(QString::fromUtf8(":/icon/note.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         Widget->setWindowIcon(icon);
         layoutWidget = new QWidget(Widget);
         layoutWidget->setObjectName("layoutWidget");

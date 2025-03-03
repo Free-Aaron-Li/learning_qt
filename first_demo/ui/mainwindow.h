@@ -8,6 +8,8 @@
 #define MAINWINDOW_H
 
 #include <QDebug>
+#include <QFile>
+#include <QFileDialog>
 #include <QMainWindow>
 #include <iostream>
 
@@ -33,6 +35,18 @@ private slots:
     void on_btnUi_clicked();
     void on_btnQObj_clickedMyself();
     void in_btnPointer_clicked();
+
+    void on_btnReadFile_clicked();
+
+    void on_btnWriteFile_clicked();
+
+    void on_btnStreamRead_clicked();
+
+    void on_btnStreamWrite_clicked();
+
+    void on_btnQFileDialogOpen_clicked();
+
+    void on_btnSaveFile_clicked();
 
 private:
     Ui::MainWindow *ui;
