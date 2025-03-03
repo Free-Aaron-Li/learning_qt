@@ -7,7 +7,9 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
+#include <QFileDialog>
 #include <QWidget>
+#include <iostream>
 
 /// QT_BEGIN_NAMESPACE 是 Qt 框架中用于支持命名空间的宏定义。Qt
 /// 使用这些宏来确保其库中的类和函数不会与其他库中的同名类和函数冲突。
@@ -23,10 +25,19 @@ QT_END_NAMESPACE
 class Widget final : public QWidget {
     /// Q_OBJECT 是 Qt 框架中非常重要的宏，用于启用 Qt 对象的元对象系统。
     Q_OBJECT
+    QFile _file;
 
 public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget() override;
+
+
+private slots:
+    void on_btnOpen_clicked();
+
+    void on_btnSave_clicked();
+
+    void on_btnClose_clicked() const;
 
 private:
     Ui::Widget *ui;
