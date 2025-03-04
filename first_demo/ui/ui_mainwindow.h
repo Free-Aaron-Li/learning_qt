@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -34,6 +35,7 @@ public:
     QPushButton *btnStreamWrite;
     QPushButton *btnQFileDialogOpen;
     QPushButton *btnSaveFile;
+    QComboBox *comboBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -77,6 +79,16 @@ public:
         btnSaveFile = new QPushButton(centralwidget);
         btnSaveFile->setObjectName("btnSaveFile");
         btnSaveFile->setGeometry(QRect(150, 310, 80, 20));
+        comboBox = new QComboBox(centralwidget);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName("comboBox");
+        comboBox->setGeometry(QRect(280, 310, 81, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -106,6 +118,14 @@ public:
         btnStreamWrite->setText(QCoreApplication::translate("MainWindow", "Stream \345\206\231\345\205\245", nullptr));
         btnQFileDialogOpen->setText(QCoreApplication::translate("MainWindow", "\346\211\223\345\274\200\346\226\207\344\273\266\351\200\211\346\213\251\346\241\206", nullptr));
         btnSaveFile->setText(QCoreApplication::translate("MainWindow", "\344\277\235\345\255\230\346\226\207\344\273\266", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "GBK", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "UTF-8", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "ANSI", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "UTF-16", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("MainWindow", "UTF-16LE", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("MainWindow", "UTF-16BE", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("MainWindow", "GB2312", nullptr));
+
     } // retranslateUi
 
 };

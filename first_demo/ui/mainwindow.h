@@ -48,6 +48,8 @@ private slots:
 
     void on_btnSaveFile_clicked();
 
+    void in_comboBox_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
 };

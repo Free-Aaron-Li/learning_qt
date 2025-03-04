@@ -157,6 +157,51 @@
      <string>保存文件</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>310</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>GBK</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>UTF-8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ANSI</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>UTF-16</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>UTF-16LE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>UTF-16BE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GB2312</string>
+     </property>
+    </item>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

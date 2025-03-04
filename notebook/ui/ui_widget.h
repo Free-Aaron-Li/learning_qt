@@ -1,9 +1,3 @@
-//  Copyright (c) 2025. aaron.
-//
-//  This program is under the GPL-3.0 license.
-//  if you have not received it or the program has several bugs, please let me know:
-//  <communicate_aaron@outlook.com>.
-
 /********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
@@ -18,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -43,9 +38,9 @@ public:
     QTextEdit *textEdit;
     QWidget *widgetBottom;
     QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacerLeft;
     QLabel *labelPosition;
-    QLabel *labelEncoding;
+    QSpacerItem *horizontalSpacerLeft;
+    QComboBox *comboBox;
     QSpacerItem *horizontalSpacerRight;
 
     void setupUi(QWidget *Widget)
@@ -54,7 +49,7 @@ public:
             Widget->setObjectName("Widget");
         Widget->resize(799, 599);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/icon/note.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon.addFile(QString::fromUtf8(":/resource/icon/note.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         Widget->setWindowIcon(icon);
         layoutWidget = new QWidget(Widget);
         layoutWidget->setObjectName("layoutWidget");
@@ -119,20 +114,30 @@ public:
         widgetBottom->setStyleSheet(QString::fromUtf8("background-color: rgb(74, 74, 74)"));
         horizontalLayout = new QHBoxLayout(widgetBottom);
         horizontalLayout->setObjectName("horizontalLayout");
+        labelPosition = new QLabel(widgetBottom);
+        labelPosition->setObjectName("labelPosition");
+        labelPosition->setMinimumSize(QSize(0, 0));
+        labelPosition->setLayoutDirection(Qt::LayoutDirection::RightToLeft);
+
+        horizontalLayout->addWidget(labelPosition);
+
         horizontalSpacerLeft = new QSpacerItem(625, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacerLeft);
 
-        labelPosition = new QLabel(widgetBottom);
-        labelPosition->setObjectName("labelPosition");
-        labelPosition->setMinimumSize(QSize(0, 0));
+        comboBox = new QComboBox(widgetBottom);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName("comboBox");
+        comboBox->setMinimumSize(QSize(42, 0));
 
-        horizontalLayout->addWidget(labelPosition);
-
-        labelEncoding = new QLabel(widgetBottom);
-        labelEncoding->setObjectName("labelEncoding");
-
-        horizontalLayout->addWidget(labelEncoding);
+        horizontalLayout->addWidget(comboBox);
 
         horizontalSpacerRight = new QSpacerItem(20, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
 
@@ -153,8 +158,16 @@ public:
         btnOpen->setText(QString());
         btnSave->setText(QString());
         btnClose->setText(QString());
-        labelPosition->setText(QCoreApplication::translate("Widget", "\347\254\254 1 \350\241\214 \347\254\254 1 \345\210\227 ", nullptr));
-        labelEncoding->setText(QCoreApplication::translate("Widget", "UTF-8", nullptr));
+        labelPosition->setText(QCoreApplication::translate("Widget", " \350\241\2141 \345\210\2271  ", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("Widget", "UTF-8", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("Widget", "UTF-16BE", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("Widget", "UTF-16LE", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("Widget", "GBK", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("Widget", "ANSI", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("Widget", "GB2312", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("Widget", "GB18030", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("Widget", "ISO-2022-CN", nullptr));
+
     } // retranslateUi
 
 };

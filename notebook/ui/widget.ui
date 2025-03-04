@@ -141,9 +141,28 @@ QPushButton::pressed { border-image: url(:/icon/c3.png); }</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
+        <widget class="QLabel" name="labelPosition">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string> 行1 列1  </string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="horizontalSpacerLeft">
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Expanding</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -154,23 +173,53 @@ QPushButton::pressed { border-image: url(:/icon/c3.png); }</string>
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="labelPosition">
+        <widget class="QComboBox" name="comboBox">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>42</width>
            <height>0</height>
           </size>
          </property>
-         <property name="text">
-          <string>第 1 行 第 1 列 </string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelEncoding">
-         <property name="text">
-          <string>UTF-8</string>
-         </property>
+         <item>
+          <property name="text">
+           <string>UTF-8</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UTF-16BE</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UTF-16LE</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>GBK</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ANSI</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>GB2312</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>GB18030</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ISO-2022-CN</string>
+          </property>
+         </item>
         </widget>
        </item>
        <item>

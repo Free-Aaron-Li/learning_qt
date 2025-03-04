@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     /// @brief 方式3：
     /// 使用 lambda表达式来连接信号和槽。\n
     /// 注意：这里需要使用 &QPushButton::clicked，而非宏
-    QObject::connect(ui->btnLambda, &QPushButton::clicked, [this] { std::cout << "btnLambda Clicked" << std::endl; });
+    connect(ui->btnLambda, &QPushButton::clicked, [this] { std::cout << "btnLambda Clicked" << std::endl; });
 
     /// @brief 方式4：
     /// 使用函数指针直接连接信号和槽。\n
@@ -33,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     /// 触发自定义信号
     emit mySignal();
     emit mySignalParams(1);
+
+    connect(ui->comboBox, &QComboBox::currentIndexChanged, this, &MainWindow::in_comboBox_currentIndexChanged);
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -171,4 +173,8 @@ void MainWindow::on_btnSaveFile_clicked() {
     QStringDecoder decoder(QStringDecoder::Utf8);
     out << decoder.decode("Hello, World!\n你好👋，世界🌏！\n");
     file.close();
+}
+void MainWindow::in_comboBox_currentIndexChanged(const int index) {
+    std::cout << "comboBox current index: " << index
+              << ".\nThe Content is: " << ui->comboBox->currentText().toStdString() << std::endl;
 }

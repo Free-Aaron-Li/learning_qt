@@ -37,7 +37,11 @@ private slots:
 
     void on_btnSave_clicked();
 
-    void on_btnClose_clicked() const;
+    void on_btnClose_clicked();
+
+    void in_comboBox_currentIndexChanged(int index);
+
+    void in_textEdit_cursorPositionChanged() const;
 
 private:
     Ui::Widget *ui;
