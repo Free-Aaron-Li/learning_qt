@@ -8,6 +8,9 @@
 #define WIDGET_H
 
 #include <QFileDialog>
+#include <QMessageBox>
+#include <QShortcut>
+#include <QTextEdit>
 #include <QWidget>
 #include <iostream>
 
@@ -26,10 +29,16 @@ class Widget final : public QWidget {
     /// Q_OBJECT 是 Qt 框架中非常重要的宏，用于启用 Qt 对象的元对象系统。
     Q_OBJECT
     QFile _file;
+    QList<QTextEdit::ExtraSelection> _extra_selections;
+    QTextEdit::ExtraSelection _selection;
 
 public:
     explicit Widget(QWidget *parent = nullptr);
     ~Widget() override;
+    /// 字体放大
+    void zoomIn() const;
+    /// 字体缩小
+    void zoomOut() const;
 
 
 private slots:
@@ -41,7 +50,7 @@ private slots:
 
     void in_comboBox_currentIndexChanged(int index);
 
-    void in_textEdit_cursorPositionChanged() const;
+    void in_textEdit_cursorPositionChanged();
 
 private:
     Ui::Widget *ui;

@@ -17,9 +17,9 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "mytextedit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -35,7 +35,7 @@ public:
     QPushButton *btnSave;
     QPushButton *btnClose;
     QSpacerItem *hSpacer;
-    QTextEdit *textEdit;
+    MyTextEdit *textEdit;
     QWidget *widgetBottom;
     QHBoxLayout *horizontalLayout;
     QLabel *labelPosition;
@@ -103,7 +103,7 @@ public:
 
         verticalLayout->addWidget(widgetButtons);
 
-        textEdit = new QTextEdit(layoutWidget);
+        textEdit = new MyTextEdit(layoutWidget);
         textEdit->setObjectName("textEdit");
 
         verticalLayout->addWidget(textEdit);
