@@ -35,6 +35,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     emit mySignalParams(1);
 
     connect(ui->comboBox, &QComboBox::currentIndexChanged, this, &MainWindow::in_comboBox_currentIndexChanged);
+
+    /// 关联自定义组件的信号与槽
+    connect(ui->widgetMy, &MyButton::clicked, [=]() { qDebug() << "My Button Is Clicked!"; });
 }
 
 MainWindow::~MainWindow() { delete ui; }
@@ -174,7 +177,22 @@ void MainWindow::on_btnSaveFile_clicked() {
     out << decoder.decode("Hello, World!\n你好👋，世界🌏！\n");
     file.close();
 }
-void MainWindow::in_comboBox_currentIndexChanged(const int index) {
+void MainWindow::in_comboBox_currentIndexChanged(const int index) const {
     std::cout << "comboBox current index: " << index
               << ".\nThe Content is: " << ui->comboBox->currentText().toStdString() << std::endl;
 }
+void MainWindow::enterEvent(QEnterEvent *event) { QMainWindow::enterEvent(event); }
+void MainWindow::leaveEvent(QEvent *event) { QMainWindow::leaveEvent(event); }
+void MainWindow::wheelEvent(QWheelEvent *event) { QMainWindow::wheelEvent(event); }
+void MainWindow::closeEvent(QCloseEvent *event) {
+    switch (const auto result =
+                    QMessageBox::warning(this, tr("提示"), tr("是否关闭窗口？"), QMessageBox::Ok | QMessageBox::No)) {
+        case QMessageBox::Ok:
+            event->accept();
+            break;
+        default:
+            event->ignore();
+            break;
+    }
+}
+void MainWindow::mousePressEvent(QMouseEvent *event) { QMainWindow::mousePressEvent(event); }

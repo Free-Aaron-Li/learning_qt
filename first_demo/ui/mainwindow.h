@@ -7,11 +7,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QCloseEvent>
 #include <QDebug>
 #include <QFile>
 #include <QFileDialog>
 #include <QMainWindow>
+#include <QMessageBox>
 #include <iostream>
+#include "mybutton.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,12 +22,12 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class MainWindow final : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow() override;
 signals:
     void mySignal();
     void mySignalParams(int value);
@@ -48,7 +51,13 @@ private slots:
 
     void on_btnSaveFile_clicked();
 
-    void in_comboBox_currentIndexChanged(int index);
+    void in_comboBox_currentIndexChanged(int index) const;
+
+    void enterEvent(QEnterEvent *event) override;
+    void leaveEvent(QEvent *event) override;
+    void wheelEvent(QWheelEvent *event) override;
+    void closeEvent(QCloseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     Ui::MainWindow *ui;

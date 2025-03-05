@@ -17,6 +17,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "mybutton.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,6 +37,7 @@ public:
     QPushButton *btnQFileDialogOpen;
     QPushButton *btnSaveFile;
     QComboBox *comboBox;
+    MyButton *widgetMy;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -89,6 +91,9 @@ public:
         comboBox->addItem(QString());
         comboBox->setObjectName("comboBox");
         comboBox->setGeometry(QRect(280, 310, 81, 21));
+        widgetMy = new MyButton(centralwidget);
+        widgetMy->setObjectName("widgetMy");
+        widgetMy->setGeometry(QRect(530, 30, 120, 80));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

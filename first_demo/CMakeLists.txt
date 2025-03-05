@@ -40,7 +40,8 @@ if (${QT_VERSION_MAJOR} GREATER_EQUAL 6) # 如果是Qt 6 及以上版本
 	qt_add_executable(${PROJECT_NAME}              # 创建可执行文件
 	                  MANUAL_FINALIZATION          # 手动结束创建目标的过程
 	                  ${PROJECT_SOURCES}
-	                  resources/resources.qrc           # 来源于 PROJECT_SOURCES
+	                  resources/resources.qrc
+	                  ui/mybutton.h ui/mybutton.cpp           # 来源于 PROJECT_SOURCES
 	)
 	# Define target properties for Android with Qt 6 as:
 	#    set_property(TARGET samp2_3 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
