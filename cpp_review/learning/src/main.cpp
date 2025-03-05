@@ -80,99 +80,108 @@ double &setValue(const int &i) {
 int main() {
     // test();
     /// 练习1：加减乘除
-    // calculator();
+    /*
+    calculator();
+    */
 
     /// 练习2：银行
-    // BankAccount user1;
-    // user1.registerMessage("Aaron", "China", 18, 20000);
-    // user1.printMessage();
-    // user1.deposit(10000);
-    // user1.withdraw(5000);
-    // user1.printMessage();
-    // user1.withdraw(120000);
+    /*
+    BankAccount user1;
+    user1.registerMessage("Aaron", "China", 18, 20000);
+    user1.printMessage();
+    user1.deposit(10000);
+    user1.withdraw(5000);
+    user1.printMessage();
+    user1.withdraw(120000);
+    */
 
     /// 练习3：引用
-    // setValue(3) = 120.1; /// 函数被当作左值
-    // cout << values[3] << endl;
+    /*setValue(3) = 120.1; /// 函数被当作左值
+    cout << values[3] << endl;*/
 
     /// 练习4：重载
     /// 4.1 Person
-    // Person p1;
-    // p1._name = "张三";
-    // p1._age = 18;
-    //
-    // Person p2;
-    // p2._name = "李四";
-    // p2._age = 20;
-    //
+    /*
+    Person p1;
+    p1._name = "张三";
+    p1._age = 18;
+
+    Person p2;
+    p2._name = "李四";
+    p2._age = 20;
+
     /// 需要实现等号运算符重载
-    // const bool result = p1 == p2;
-    // std::cout << result << std::endl;
+    const bool result = p1 == p2;
+    std::cout << result << std::endl;
+    */
 
     /// 4.2 Point
-    // Point p1{};
-    // p1._x = 1;
-    // p1._y = 2;
-    //
-    // Point p2{};
-    // p2._x = 3;
-    // p2._y = 4;
-    //
-    // Point p3 = p1 + p2;
-    // std::cout << "p3 x is: " << p3._x << ", p3 y is: " << p3._y << std::endl;
+    /*Point p1{};
+    p1._x = 1;
+    p1._y = 2;
+
+    Point p2{};
+    p2._x = 3;
+    p2._y = 4;
+
+    Point p3 = p1 + p2;
+    std::cout << "p3 x is: " << p3._x << ", p3 y is: " << p3._y << std::endl;*/
 
     /// 练习5：构造函数
-    // Car car1;
-    // car1.display();
-    // Car *p_car1 = new Car;
-    // Car *p_car2 = new Car(); /// 都会调用构造函数
-    // Car *p_car3 = new Car("BMW", 2020);
-    // // p_car3->display();
-    //
-    // std::cout << "\nthis 指针特点：" << std::endl;
-    // Car car2("奔驰", 2020);
-    // std::cout << &car2 << std::endl; /// this 指向当前对象
-    // Car car3("宝马", 2020);
-    // std::cout << &car3 << std::endl;
-    //
-    // /// 链式调用
-    // car3.setYear(2024).display();
-    // delete p_car1;
-    // delete p_car2;
-    // delete p_car3;
-    // delete &car1;
-    // delete &car2;
-    // delete &car3;
+    /*Car car1;
+    car1.display();
+    Car *p_car1 = new Car;
+    Car *p_car2 = new Car(); /// 都会调用构造函数
+    Car *p_car3 = new Car("BMW", 2020);
+    // p_car3->display();
+
+    std::cout << "\nthis 指针特点：" << std::endl;
+    Car car2("奔驰", 2020);
+    std::cout << &car2 << std::endl; /// this 指向当前对象
+    Car car3("宝马", 2020);
+    std::cout << &car3 << std::endl;
+
+    /// 链式调用
+    car3.setYear(2024).display();
+    delete p_car1;
+    delete p_car2;
+    delete p_car3;
+    delete &car1;
+    delete &car2;
+    delete &car3;*/
 
     /// 练习6：静态成员变量
-    // 通过类名调用
-    // std::cout << MyClass::_static_member << std::endl;
-    // // 通过静态函数调用
-    // std::cout << MyClass::getStaticMember() << std::endl;
-    //
-    // // 查看创建的对象数目
-    // const MyClass my_class1;
-    // const MyClass my_class2;
-    // std::cout << MyClass::_static_member << std::endl; /* 2 */
-    // {
-    //     const MyClass my_class3;
-    //     std::cout << MyClass::_static_member << std::endl; /* 3 */
-    // }
-    // const MyClass *my_class4 = new MyClass;
-    // std::cout << MyClass::_static_member << std::endl; /* 3 */
-    // delete my_class4;
-    // std::cout << MyClass::_static_member << std::endl; /* 2 */
+    /*
+    /// 通过类名调用
+    std::cout << MyClass::_static_member << std::endl;
+    /// 通过静态函数调用
+    std::cout << MyClass::getStaticMember() << std::endl;
+
+    /// 查看创建的对象数目
+    const MyClass my_class1;
+    const MyClass my_class2;
+    std::cout << MyClass::_static_member << std::endl; /* 2 #1#
+    {
+        const MyClass my_class3;
+        std::cout << MyClass::_static_member << std::endl; /* 3 #1#
+    }
+    const MyClass *my_class4 = new MyClass;
+    std::cout << MyClass::_static_member << std::endl; /* 3 #1#
+    delete my_class4;
+    std::cout << MyClass::_static_member << std::endl; /* 2 #1#
+    */
 
     /// 练习7：继承
-    // const ANIMAL animal1;
-    // animal1.eat();
-    // animal1.sound();
-    //
-    // Lion lion1;
-    // lion1.sound();
-    // lion1.hunting();
+    /*const ANIMAL animal1;
+    animal1.eat();
+    animal1.sound();
+
+    Lion lion1;
+    lion1.sound();
+    lion1.hunting();*/
 
     /// 练习8：多态
+    /*
     RemoteControl *p_remote_control1 = new TVRemoteControl;
     RemoteControl *p_remote_control1_1 = new LightRemoteControl;
     p_remote_control1->openUtils();
@@ -195,6 +204,20 @@ int main() {
     p_remote_control1_1->destroy();
     delete p_remote_control2;
     delete p_remote_control3;
+    */
+
+    /// 练习9：模板
+    PrintEverything<int> print_everything;
+    print_everything.setData(10);
+    print_everything.print();
+
+    PrintEverything<double> print_everything2;
+    print_everything2.setData(10.1);
+    print_everything2.print();
+
+    PrintEverything<std::string> print_everything3;
+    print_everything3.setData("Hello World");
+    print_everything3.print();
 
     return 0;
 }

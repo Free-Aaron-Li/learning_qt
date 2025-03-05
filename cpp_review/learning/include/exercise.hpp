@@ -170,4 +170,15 @@ public:
     void openUtils() override;
 };
 
+/// 打印模板类
+template<typename T>
+class PrintEverything {
+private:
+    T _data;
+
+public:
+    void print() const { std::cout << _data << std::endl; }
+    void setData(const T &data) { _data = data; }
+};
+
 #endif // EXERCISE_HPP
