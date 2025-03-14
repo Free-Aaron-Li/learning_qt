@@ -14,7 +14,6 @@
 >
 > C++版本：C++20
 
-
 # 3. 编译
 
 ## 3.1 IDE构建
@@ -45,19 +44,44 @@ make install
 
 构建完成后，将会在 `build` 目录下 生成 ` bin ` 目录，其中包含各章节实现的可执行程序。
 
-完整的单元项目`CMakeLists.txt`配置文件可在[first_demo][2]中查看。
+完整的单元项目`CMakeLists.txt`配置文件可在[first_demo][1]中查看。
 
-[2]:./first_demo/CMakeLists
+[1]:./first_demo/CMakeLists
 
 # 4. 项目内容
 
-## 4.1 记事本（notebook）
+## 4.1 [记事本（notebook）][2]
 
-![notebook home](./asset/notebook_home.png)
+[2]:./notebook
+
+![notebook home](asset/markdown/notebook_home.png)
 
 **功能**
+
 - 支持文本创建、打开、保存、关闭功能。
 - 打开、保存、放大（缩小）快捷键。
--  底部显示行列号及文本字符编码。
--  内容编码转换。
+- 底部显示行列号及文本字符编码。
+- 内容编码转换。
 - 支持字体放大缩小（ `Ctrl` 加鼠标滚轮方式）。
+
+## 4.2 [雷达][3]
+
+[3]:./radar
+
+![radar](./asset/markdown/radar.png)
+
+**功能**
+
+- 通过渐变实现阴影旋转。
+
+## 4.3 [简易汽车仪表盘][4]
+
+[4]:./dash_board
+
+![dash_board](./asset/markdown/dash_board.png)
+
+**功能**
+
+- 通过定时器实现指针旋转。
+- 通过渐变实现阴影旋转。
+- 通过`drawLine`以及`drawText`实现指针刻度及时速。
