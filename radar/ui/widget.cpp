@@ -12,7 +12,7 @@
 Widget::Widget(QWidget* parent) : QWidget(parent), ui(new Ui::Widget) {
     ui->setupUi(this);
     _timer = new QTimer(this);
-    connect(_timer, &QTimer::timeout, this, [=] {
+    connect(_timer, &QTimer::timeout, [=] {
         _start_angle += 30;
         if (_start_angle >= 360) {
             _start_angle = 0;

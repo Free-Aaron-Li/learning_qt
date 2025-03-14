@@ -8,9 +8,9 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
+#include <QPainter>
 #include <QRect>
 #include <QTimer>
-#include <QPainter>
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -31,6 +31,7 @@ public:
 private:
     Ui::Widget *ui;
     int _current_time{ 0 };
+    static constexpr int _scale{ 60 };
     QTimer *_timer{};
     bool _pointer_rotation{ false };
 };
