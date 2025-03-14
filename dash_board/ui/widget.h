@@ -9,7 +9,6 @@
 #define WIDGET_H
 
 #include <QPainter>
-#include <QRect>
 #include <QTimer>
 #include <QWidget>
 

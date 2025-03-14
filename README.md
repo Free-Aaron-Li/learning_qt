@@ -85,3 +85,13 @@ make install
 - 通过定时器实现指针旋转。
 - 通过渐变实现阴影旋转。
 - 通过`drawLine`以及`drawText`实现指针刻度及时速。
+
+## 4.4 [汽车仪表盘][5]
+
+[5]:./dash_board_plus
+
+![dash_board_plus](./asset/markdown/dash_board_plus.png)
+
+**功能**
+
+- 在简易汽车仪表盘基础上美化设计。

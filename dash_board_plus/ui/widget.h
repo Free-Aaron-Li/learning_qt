@@ -9,9 +9,9 @@
 #define WIDGET_H
 
 #include <QPainter>
+#include <QPoint>
 #include <QTimer>
 #include <QWidget>
-#include <QtMath>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -86,6 +86,13 @@ private:
     static constexpr int _middle_board_radius{ 60 };
 
     /**
+     * @brief  设置运行时间。
+     * @return 无返回值。
+     */
+    auto
+    setTime() -> void;
+
+    /**
      * @brief 初始化画布
      *
      * 该函数用于初始化画布，设置绘图环境。函数参数为QPainter对象引用，
@@ -135,7 +142,7 @@ private:
      * @return 无返回值。
      */
     static auto
-    drawScale(QPainter &painter, int radius) -> void;
+    drawScaleLine(QPainter &painter, int radius) -> void;
 
     /**
      * @brief 绘制刻度值
@@ -176,5 +183,29 @@ private:
      */
     static auto
     drawPie(QPainter &painter, int radius, int current_time) -> void;
+
+    /**
+     * @brief 内圈绘制
+     */
+    static auto
+    drawEllipseInner(QPainter &painter, int inner_radius) -> void;
+
+    /**
+     * @brief 绘制内圈光环
+     */
+    static auto
+    drawEllipseInnerShine(QPainter &painter, int inner_radius) -> void;
+
+    /**
+     * @brief 绘制外圈光环
+     */
+    static auto
+    drawEllipseOuterShine(QPainter &painter, int outer_radius) -> void;
+
+    /**
+     * @brief 绘制汽车Logo
+     */
+    static auto
+    drawLogo(QPainter &painter,int radius)->void;
 };
 #endif  // WIDGET_H
