@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>418</width>
+    <height>669</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(22, 22, 22);</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>2</y>
+     <width>401</width>
+     <height>661</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,3,3,12">
+    <item>
+     <widget class="QWidget" name="widgetTopTop" native="true">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(230, 230, 230);</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="lineEditSearchContent">
+         <property name="maximumSize">
+          <size>
+           <width>180</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"> QLineEdit {
+	color: rgb(0, 0, 0);
+     border: 2px solid gray;
+     border-radius: 4px;
+     padding: 0 8px;
+     background: white;
+     selection-background-color: darkgray;
+ }
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonSearch">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 10px</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource/resource.qrc">
+           <normaloff>:/weather/搜索.svg</normaloff>:/weather/搜索.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacerSearachToDate">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelDate">
+         <property name="text">
+          <string>2025/3/16  星期日</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widgetTopBottom" native="true">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(230, 230, 230);</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelMainWeatherIcon">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resource/resource.qrc">:/weather/晴天.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>8</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelWeatherContent">
+           <property name="text">
+            <string>晴天</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="labelWeatherTemperatureRange">
+           <property name="text">
+            <string>20 ~ 26 ℃ </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QLabel" name="labelWeatherTemperatureDegree">
+           <property name="font">
+            <font>
+             <pointsize>30</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>23</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="labelWeatherLocation">
+           <property name="text">
+            <string>深圳市</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <spacer name="horizontalSpacerTempToLoca">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widgetCenter" native="true">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(230,230,230)</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelColdIndex">
+         <property name="text">
+          <string>感冒指数：各类人群可自由活动</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widgetCenterInner" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(186, 96, 6);
+border-radius: 10px</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout" rowstretch="0,0">
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>30</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>10</number>
+          </property>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayoutHumidity">
+            <item>
+             <widget class="QLabel" name="labelHumidityIcon">
+              <property name="minimumSize">
+               <size>
+                <width>35</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resource/resource.qrc">:/weather/湿度.svg</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutHumidity">
+              <item>
+               <widget class="QLabel" name="labelCenterHumidityContent">
+                <property name="text">
+                 <string>湿度</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelCenterHumidityLevel">
+                <property name="text">
+                 <string>85%</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayoutWindDirection">
+            <item>
+             <widget class="QLabel" name="labelWindDirectionIcon">
+              <property name="minimumSize">
+               <size>
+                <width>35</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resource/resource.qrc">:/weather/风向.svg</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutWindDirection">
+              <item>
+               <widget class="QLabel" name="labelCenterWindDirectionContent">
+                <property name="text">
+                 <string>东南风</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelCenterWindDirectionLevel">
+                <property name="text">
+                 <string>2 级</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutAirQuality">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="labelAirQualityIcon">
+              <property name="minimumSize">
+               <size>
+                <width>35</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resource/resource.qrc">:/weather/空气质量.svg</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutAirQuality">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="labelCenterAirQualityContent">
+                <property name="text">
+                 <string>空气质量</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelCenterAirQualityLevel">
+                <property name="text">
+                 <string>优</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutPm2p5">
+            <item>
+             <widget class="QLabel" name="labelPm2p5Icon">
+              <property name="minimumSize">
+               <size>
+                <width>35</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../resource/resource.qrc">:/weather/PM2.5.svg</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayoutPm2p5">
+              <item>
+               <widget class="QLabel" name="labelCenterPm2p5Content">
+                <property name="text">
+                 <string>PM 2.5</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelCenterPm2p5Level">
+                <property name="text">
+                 <string>24</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widgetBottom" native="true">
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>-2</x>
+         <y>9</y>
+         <width>401</width>
+         <height>351</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="4,4,1">
+        <property name="leftMargin">
+         <number>4</number>
+        </property>
+        <property name="rightMargin">
+         <number>4</number>
+        </property>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_7" rowminimumheight="1,2">
+          <item row="0" column="0">
+           <widget class="QWidget" name="widgetBottomDayAndDate" native="true">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(230, 230, 230);</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <property name="horizontalSpacing">
+              <number>4</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>0</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="labelUnitDay0">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+               </property>
+               <property name="text">
+                <string>昨天</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="labelUnitDay1">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+               </property>
+               <property name="text">
+                <string>昨天</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="labelUnitDay2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+               </property>
+               <property name="text">
+                <string>昨天</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="labelUnitDay3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+               </property>
+               <property name="text">
+                <string>昨天</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLabel" name="labelUnitDay4">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+               </property>
+               <property name="text">
+                <string>昨天</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLabel" name="labelUnitDay5">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+               </property>
+               <property name="text">
+                <string>昨天</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="labelUnitDate0">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+               </property>
+               <property name="text">
+                <string>03/16</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="labelUnitDate1">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+               </property>
+               <property name="text">
+                <string>03/16</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="labelUnitDate2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+               </property>
+               <property name="text">
+                <string>03/16</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="labelUnitDate3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+               </property>
+               <property name="text">
+                <string>03/16</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="4">
+              <widget class="QLabel" name="labelUnitDate4">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+               </property>
+               <property name="text">
+                <string>03/16</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QLabel" name="labelUnitDate5">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(5, 162, 162);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+               </property>
+               <property name="text">
+                <string>03/16</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,1">
+            <item>
+             <widget class="QWidget" name="widgetBottomWeather" native="true">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(230, 230, 230);</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>4</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>4</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>0</number>
+               </property>
+               <item row="1" column="3">
+                <widget class="QLabel" name="labelUnitWeatherContent3">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+                 </property>
+                 <property name="text">
+                  <string>多云</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelUnitWeatherContent0">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+                 </property>
+                 <property name="text">
+                  <string>多云</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="labelUnitWeatherContent1">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+                 </property>
+                 <property name="text">
+                  <string>多云</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QLabel" name="labelUnitWeatherIcon4">
+                 <property name="styleSheet">
+                  <string notr="true">image: url(:/weather/多云.svg);
+background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLabel" name="labelUnitWeatherContent4">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+                 </property>
+                 <property name="text">
+                  <string>多云</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="labelUnitWeatherIcon3">
+                 <property name="styleSheet">
+                  <string notr="true">image: url(:/weather/多云.svg);
+background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QLabel" name="labelUnitWeatherIcon5">
+                 <property name="styleSheet">
+                  <string notr="true">image: url(:/weather/多云.svg);
+background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="labelUnitWeatherIcon1">
+                 <property name="styleSheet">
+                  <string notr="true">image: url(:/weather/多云.svg);
+background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="labelUnitWeatherIcon2">
+                 <property name="styleSheet">
+                  <string notr="true">image: url(:/weather/多云.svg);
+background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelUnitWeatherIcon0">
+                 <property name="styleSheet">
+                  <string notr="true">image: url(:/weather/多云.svg);
+background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="5">
+                <widget class="QLabel" name="labelUnitWeatherContent5">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+                 </property>
+                 <property name="text">
+                  <string>多云</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="labelUnitWeatherContent2">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+                 </property>
+                 <property name="text">
+                  <string>多云</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widgetBottomAirQuality" native="true">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(230, 230, 230);</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>4</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>4</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>0</number>
+               </property>
+               <item row="0" column="3">
+                <widget class="QLabel" name="labelUnitAirQuality3">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(121, 184, 0);
+border-radius: 4px;</string>
+                 </property>
+                 <property name="text">
+                  <string>优</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelUnitAirQuality0">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(121, 184, 0);
+border-radius: 4px;</string>
+                 </property>
+                 <property name="text">
+                  <string>优</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QLabel" name="labelUnitAirQuality5">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(121, 184, 0);
+border-radius: 4px;</string>
+                 </property>
+                 <property name="text">
+                  <string>优</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="labelUnitAirQuality1">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 187, 23);
+border-radius: 4px;</string>
+                 </property>
+                 <property name="text">
+                  <string>良</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="labelUnitAirQuality2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(121, 184, 0);
+border-radius: 4px;</string>
+                 </property>
+                 <property name="text">
+                  <string>优</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QLabel" name="labelUnitAirQuality4">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(121, 184, 0);
+border-radius: 4px;</string>
+                 </property>
+                 <property name="text">
+                  <string>优</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="widgetBottomTempCurveMax" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widgetBottomTempCurveMin" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="widgetBottomWindDirection" native="true">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(230, 230, 230);</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>4</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="horizontalSpacing">
+            <number>4</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelUnitWindDirectionContent0">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+             </property>
+             <property name="text">
+              <string>东南风</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="labelUnitWindDirectionContent1">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+             </property>
+             <property name="text">
+              <string>东南风</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="labelUnitWindDirectionContent2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+             </property>
+             <property name="text">
+              <string>东南风</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="labelUnitWindDirectionContent3">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+             </property>
+             <property name="text">
+              <string>东南风</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="labelUnitWindDirectionContent4">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+             </property>
+             <property name="text">
+              <string>东南风</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="labelUnitWindDirectionContent5">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+</string>
+             </property>
+             <property name="text">
+              <string>东南风</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelUnitWindDirectionLevel0">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+             </property>
+             <property name="text">
+              <string>2 级</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="labelUnitWindDirectionLevel1">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+             </property>
+             <property name="text">
+              <string>2 级</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="labelUnitWindDirectionLevel2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+             </property>
+             <property name="text">
+              <string>2 级</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="labelUnitWindDirectionLevel3">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+             </property>
+             <property name="text">
+              <string>2 级</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLabel" name="labelUnitWindDirectionLevel4">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+             </property>
+             <property name="text">
+              <string>2 级</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QLabel" name="labelUnitWindDirectionLevel5">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(37, 37, 37);
+border-radius: 4px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
+             </property>
+             <property name="text">
+              <string>2 级</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

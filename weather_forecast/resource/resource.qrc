@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/">
+        <file>weather/暴雪.svg</file>
+        <file>weather/暴雨.svg</file>
+        <file>weather/残月.svg</file>
+        <file>weather/大雪.svg</file>
+        <file>weather/大雨.svg</file>
+        <file>weather/大雨转晴.svg</file>
+        <file>weather/多云.svg</file>
+        <file>weather/多云转晴天.svg</file>
+        <file>weather/蛾眉月.svg</file>
+        <file>weather/雷阵雨.svg</file>
+        <file>weather/满月.svg</file>
+        <file>weather/晴天.svg</file>
+        <file>weather/闪电.svg</file>
+        <file>weather/上弦月.svg</file>
+        <file>weather/少云.svg</file>
+        <file>weather/特大阵雨.svg</file>
+        <file>weather/晚多云.svg</file>
+        <file>weather/晚晴天.svg</file>
+        <file>weather/雾.svg</file>
+        <file>weather/雾霾.svg</file>
+        <file>weather/下弦月.svg</file>
+        <file>weather/小雪.svg</file>
+        <file>weather/小雨.svg</file>
+        <file>weather/新月.svg</file>
+        <file>weather/扬沙.svg</file>
+        <file>weather/阴天.svg</file>
+        <file>weather/雨夹雪.svg</file>
+        <file>weather/张弦月.svg</file>
+        <file>weather/阵雨.svg</file>
+        <file>weather/阵雨转晴.svg</file>
+        <file>weather/中雪.svg</file>
+        <file>weather/中雨.svg</file>
+        <file>weather/风向.svg</file>
+        <file>weather/空气质量.svg</file>
+        <file>weather/PM2.5.svg</file>
+        <file>weather/湿度.svg</file>
+        <file>weather/搜索.svg</file>
+        <file>action/close.svg</file>
+        <file>json/citycode.json</file>
+        <file>weather/小雨转多云.svg</file>
+        <file>weather/阴转多云.svg</file>
+    </qresource>
+</RCC>

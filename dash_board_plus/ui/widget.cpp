@@ -11,6 +11,34 @@
 
 Widget::Widget(QWidget* parent) : QWidget(parent), ui(new Ui::Widget) {
     ui->setupUi(this);
+    setFixedSize(800, 600); /* 固定窗口大小 */
+    setTime();
+}
+
+Widget::~Widget() { delete ui; }
+
+void
+Widget::paintEvent(QPaintEvent* event) {
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+
+    int radius = height() / 2;
+
+    initCanvas(painter);
+    drawMiddleBoard(painter, _middle_board_radius);
+    drawScaleLine(painter, radius);
+    drawScaleText(painter, radius);
+    drawPointer(painter, radius, _current_time);
+    drawPie(painter, radius + 25, _current_time);
+    drawEllipseInnerShine(painter, radius / 3);
+    drawEllipseInner(painter, radius / 4);
+    drawCurrentSpeed(painter, _current_time);
+    drawEllipseOuterShine(painter, radius + 25);
+    drawLogo(painter, radius);
+}
+
+auto
+Widget::setTime() -> void {
     _timer = new QTimer(this);
     connect(_timer, &QTimer::timeout, [this] {
         if (!_pointer_rotation) {
@@ -29,23 +57,6 @@ Widget::Widget(QWidget* parent) : QWidget(parent), ui(new Ui::Widget) {
     });
     _timer->start(50);
 }
-
-Widget::~Widget() { delete ui; }
-
-void
-Widget::paintEvent(QPaintEvent* event) {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-
-    initCanvas(painter);
-    drawMiddleBoard(painter, _middle_board_radius);
-    drawCurrentSpeed(painter, _current_time);
-    drawScale(painter, height() / 2);
-    drawScaleText(painter, height() / 2);
-    drawPointer(painter, height() / 2, _current_time);
-    drawPie(painter, height() / 2, _current_time);
-}
-
 void
 Widget::initCanvas(QPainter& painter) const {
     /// 1. 绘制背景
@@ -64,18 +75,31 @@ Widget::drawMiddleBoard(QPainter& painter, const int radius) {
 }
 auto
 Widget::drawCurrentSpeed(QPainter& painter, const int current_time) -> void {
-    /// 绘制当前时速
-    painter.setFont(QFont("Noto Serif CJK SC", 20));
+    painter.setPen(QPen(Qt::white, 5));
+
+    /// 1. 绘制当前时速
+    QFont font("Noto Serif CJK SC", 30);
+    font.setBold(true);
+    painter.setFont(font);
     painter.drawText(QRect(-_middle_board_radius, -_middle_board_radius,
-                           _middle_board_radius * 2, _middle_board_radius * 2),
+                           _middle_board_radius * 2, _middle_board_radius),
                      Qt::AlignCenter, QString::number(current_time * 4));
+
+    /// 2. 绘制单位
+    QFont font2("Noto Serif CJK SC", 13);
+    font2.setBold(true);
+    painter.setFont(font2);
+    painter.drawText(
+            QRect(-_middle_board_radius, -_middle_board_radius,
+                  _middle_board_radius * 2, _middle_board_radius * 2 + 40),
+            Qt::AlignCenter, "Km/h");
 }
 auto
-Widget::drawScale(QPainter& painter, const int radius) -> void {
+Widget::drawScaleLine(QPainter& painter, const int radius) -> void {
     painter.save(); /* 保存当前状态，此刻在原点，x在3点钟方向 */
     painter.rotate(_rotation_angle);
 
-    QFont scale_font("Noto Serif CJK SC", 15);
+    QFont scale_font("Noto Serif CJK SC", 14);
     scale_font.setBold(true);
     painter.setFont(scale_font);
     painter.setPen(QPen(Qt::white, 5));
@@ -83,7 +107,7 @@ Widget::drawScale(QPainter& painter, const int radius) -> void {
     /// 绘制刻度
     for (int i = 0; i <= _scale; ++i) {
         if (i >= 40) { /* 当时速大于160，刻度变红 */
-            painter.setPen(QPen(Qt::red, 5));
+            painter.setPen(QPen(QColor(252, 46, 46, 255), 5));
         }
         /// 绘制刻度线
         if (i % 5 == 0) { /* 绘制长刻度线 */
@@ -103,6 +127,7 @@ Widget::drawScaleText(QPainter& painter, const int radius) -> void {
     /// 偏移坐标y值
     int del_y{ 0 };
 
+    painter.setFont(QFont("Noto Serif CJK SC", 15));
     const int current_radius = radius - 40;
     for (int i = 0; i <= _scale; ++i) {
         if (i % 5 == 0) {
@@ -140,10 +165,17 @@ Widget::drawScaleText(QPainter& painter, const int radius) -> void {
 auto
 Widget::drawPointer(QPainter& painter, const int radius, const int current_time)
         -> void {
-    painter.setPen(QPen(Qt::white, 5));
     painter.save();
     painter.rotate(_rotation_angle + _angle * current_time);
-    painter.drawLine(60, 0, radius - 70, 0);
+    painter.setBrush(Qt::white);
+    painter.setPen(Qt::NoPen);
+    constexpr QPointF points[] = {
+        QPointF(20.0, -10.0),
+        QPointF(220.0, -1.1),
+        QPointF(220.0, 1.1),
+        QPointF(20.0, 10.0),
+    };
+    painter.drawPolygon(points, 4);
     painter.restore();
 }
 auto
@@ -151,8 +183,44 @@ Widget::drawPie(QPainter& painter, const int radius, const int current_time)
         -> void {
     const QRect rectangle(-radius, -radius, radius * 2, radius * 2);
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor(77, 54, 33, 100));
+    painter.setBrush(QColor(50, 0, 0, 200));
     painter.drawPie(rectangle, (360 - _rotation_angle) * 16,
                     static_cast<int>(current_time * -_angle *
                                      16));  // angle取负植，为使其顺时针方向绘制
+}
+auto
+Widget::drawEllipseInner(QPainter& painter, const int inner_radius) -> void {
+    painter.setBrush(Qt::black);
+    painter.setPen(Qt::NoPen);
+    painter.drawEllipse(QPoint(0, 0), inner_radius, inner_radius);
+}
+auto
+Widget::drawEllipseInnerShine(QPainter& painter, const int inner_radius)
+        -> void {
+    QRadialGradient radial_gradient(0, 0, inner_radius);
+    radial_gradient.setColorAt(0.0, QColor(255, 0, 0, 200));
+    radial_gradient.setColorAt(1.0, QColor(0, 0, 0, 100));
+    painter.setBrush(radial_gradient);
+    painter.drawEllipse(QPoint(0, 0), inner_radius, inner_radius);
+}
+auto
+Widget::drawEllipseOuterShine(QPainter& painter, const int outer_radius)
+        -> void {
+    const QRect rectangle(-outer_radius, -outer_radius, outer_radius * 2,
+                          outer_radius * 2);
+    painter.setPen(Qt::NoPen);
+    QRadialGradient radial_gradient(0, 0, outer_radius);
+    radial_gradient.setColorAt(1, QColor(255, 0, 0, 200));
+    radial_gradient.setColorAt(0.97, QColor(255, 0, 0, 70));
+    radial_gradient.setColorAt(0.9, QColor(0, 0, 0, 0));
+    radial_gradient.setColorAt(0, QColor(0, 0, 0, 0));
+    painter.setBrush(radial_gradient);
+    painter.drawPie(rectangle, (360 - _rotation_angle) * 16,
+                    static_cast<int>((_scale + 1) * -_angle *
+                                     16));  // angle取负植，为使其顺时针方向绘制
+}
+auto
+Widget::drawLogo(QPainter& painter, const int radius) -> void {
+    const QRect rectangle(-80, static_cast<int>(radius * 0.38), 171, 76);
+    painter.drawPixmap(rectangle, QPixmap(":/logo/jaguar.jpg"));
 }
