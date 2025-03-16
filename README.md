@@ -95,3 +95,17 @@ make install
 **功能**
 
 - 在简易汽车仪表盘基础上美化设计。
+
+## 4.5 [天气预报][6]
+
+[6]:./weather_forecast
+
+![weather_forecast](./asset/markdown/weather_forecast.png)
+
+**功能**
+- 实时天气展示。
+- 多日天气预报
+- 温度趋势可视化。
+- 空气质量检测。
+- 风力与风向信息。
+- 夜间的界面交互设计。
